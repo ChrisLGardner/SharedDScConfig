@@ -27,7 +27,7 @@ CompanyName = ''
 Copyright = '(c) 2017 Chris. All rights reserved.'
 
 # Modules that must be imported into the global environment prior to importing this module
-RequiredModules = @('Jea')
+RequiredModules = @('JeaDsc')
 
 # DSC resources to export from this module
 DscResourcesToExport = @('JeaConfig')

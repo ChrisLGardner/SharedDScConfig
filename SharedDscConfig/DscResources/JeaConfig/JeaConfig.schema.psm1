@@ -4,7 +4,7 @@ Configuration JeaConfig {
         $RoleCapabilities = @()
     )
 
-    Import-DscResource -ModuleName Jea
+    Import-DscResource -ModuleName JeaDsc
 
     foreach ($Role in $RoleCapabilities) {
         if(!$Role.Ensure) { $Role.add('Ensure', 'Present') }
