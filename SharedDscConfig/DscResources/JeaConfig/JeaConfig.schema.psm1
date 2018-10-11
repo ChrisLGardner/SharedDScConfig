@@ -11,7 +11,7 @@ Configuration JeaConfig {
         $Name = $Role.Name
         $Role.Remove('Name')
 
-        foreach ($Key in ($Role.Keys.Where({$Role[$_] -is [Hashtable]}))) {
+        foreach ($Key in ($Role.Keys.Where({$Role[$_] -is [System.Collections.Specialized.OrderedDictionary]}))) {
             $Role[$Key] = Out-HashString $Role[$Key]
         }
 
@@ -21,7 +21,7 @@ Configuration JeaConfig {
     foreach ($SessionConfiguration in $SessionConfigurations) {
         if(!$SessionConfiguration.Ensure) { $SessionConfiguration.add('Ensure', 'Present') }
 
-        foreach ($Key in ($SessionConfiguration.Keys.Where({$SessionConfiguration[$_] -is [Hashtable]}))) {
+        foreach ($Key in ($SessionConfiguration.Keys.Where({$SessionConfiguration[$_] -is [System.Collections.Specialized.OrderedDictionary]}))) {
             $SessionConfiguration[$Key] = Out-HashString $SessionConfiguration[$Key]
         }
 
